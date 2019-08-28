@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>poems</title>
+	<script src="poems.js"></script>
+	<style>
+		li{
+			width:40%;
+			height: 200px;
+			border:1px solid;
+			margin: 20px;
+			list-style: none;
+			color: rgba(120,123,255,.4);
+			border-radius: 10px;
+			box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			color: #fff;
+			background: rgba(187,52,241,.8);
+		}
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			text-align: center;			
+		} 		
+	</style>
+</head>
+<body>
+	<input type="search" id="keyword" placeholder="题目/朝代/作者/诗句" value="">
+	<ul id="list"></ul>
+	<script>
+		const keyword = document.querySelector('#keyword');
+		const list = document.querySelector('#list');
+		function searchpoem(item) {
+			if (keyword.value) {
+				return item.title.includes(keyword.value)||item.dynasty.includes(keyword.value)||item.author.includes(keyword.value)||item.content.includes(keyword.value);
+			}
+		}
+		function showlist() {
+			const selectedpoems = poems.filter(searchpoem);
+			const html = selectedpoems.map((item,index)=>`<li><h2>${item.title}</h2><p>【${item.dynasty}】 ${item.author}</p><div>${item.content}</div></li>`).join('');
+			list.innerHTML = html;
+		}
+		showlist();
+		keyword.addEventListener('input',showlist)
+	</script>	
+</body>
+</html>
