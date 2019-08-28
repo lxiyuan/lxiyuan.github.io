@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九九乘法表</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		p{
+			margin: 0;
+		}
+		span{
+			border: 2px solid #fedaad;
+			margin: 5px;
+			padding: 12px;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			box-shadow: 5px 5px 8px #edf
+		}
+		.blue{
+			background: linear-gradient(45deg,#fde568,#ed897f)
+		}
+	</style>
+</head>
+<body>
+	<script>
+		for (let i = 1; i <= 9; i++) {
+			document.write('<p>');
+			for (let j = 1; j <= 9; j++) {
+				if (j>=i) {
+					document.write(`<span class="blue">${i}*${j}=${i*j}</span>`);
+				} else {
+					document.write(`<span>${i}*${j}=${i*j}</span>`);
+				}
+			}
+			document.write('</p>');	
+		}
+	</script>
+</body>
+</html>
