@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>sum</title>
+	<style>
+		body{
+			text-align: center;
+			font: 48px arial;
+		}
+		.wrapper{
+			width: 600px;
+			margin: auto;
+			padding: 20px;
+			box-shadow: 5px 5px 8px rgba(0,0,0,.3);
+		}
+		input,button{
+			width: 160px;
+			font: 48px arial;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<input type="number" id="number1" value="1"> +
+		<input type="number" id="number2" value="2"> =
+		<button>click</button>
+	</div>
+	<script>
+		let number1 = document.querySelector('#number1');
+		let number2 = document.querySelector('#number2');
+		let button = document.querySelector('button');
+		button.addEventListener('click',sum);
+		number1.addEventListener('click',sum);
+		number2.addEventListener('click',sum);
+		function sum() {
+			button.textContent = parseInt(number1.value) + parseInt(number2.value);
+		}
+	</script>
+
+</body>
+</html>
