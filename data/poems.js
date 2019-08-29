@@ -36,7 +36,7 @@ const poems = [
 {"title":"马诗","dynasty":"唐","author":"李贺","content":"大漠沙如雪，燕山月似钩。何当金络脑，快走踏清秋。"},
 {"title":"雪","dynasty":"唐","author":"罗隐","content":"尽道丰年瑞，丰年事若何。长安有贫者，为瑞不宜多。"},
 {"title":"大林寺桃花","dynasty":"唐","author":"白居易","content":"人间四月芳菲尽，山寺桃花始盛开。长恨春归无觅处，不知转入此中来。"},
-{"title":"蝉","dynasty":"唐","author":"虞世南","content":"垂緌饮清露，流响出疏桐。居高声自远，非世藉秋风"},
+{"title":"蝉","dynasty":"唐","author":"虞世南","content":"垂緌饮清露，流响出疏桐。居高声自远，非是藉秋风"},
 {"title":"易水送别","dynasty":"唐","author":"骆宾王","content":"此地别燕丹，壮士发冲冠。昔时人已没，今日水犹寒。"},
 {"title":"竹里馆","dynasty":"唐","author":"王维","content":"独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。"},
 {"title":"杂诗","dynasty":"唐","author":"王维","content":"君自故乡来，应知故乡事。来日绮窗前，寒梅著花未？"},
