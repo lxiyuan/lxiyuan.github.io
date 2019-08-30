@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Letter cards</title>
+	<style>
+		body{
+			background: url(images/back.jpg) 0 0 no-repeat;
+		}
+		.card{
+			float: left;
+			margin: 30px 15px;
+			width: 300px;
+		}
+		.front{
+			height: 400px;
+			text-align: center;
+			font:48px/400px arial;
+			color: #fff;
+			background: linear-gradient(-155deg,rgba(255,255,255,1),rgba(255,122,246,.6));
+			border-radius: 10px;
+			box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+		}
+		.back{
+			height: 400px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			display: none;
+		}
+		.back>img{
+			width: 90%;
+			margin: auto;
+		}
+		.open .front{
+			display: none;
+		}
+		.open .back{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="front">ant</div>
+		<div class="back"><img src="letter/ant.jpg" alt="ant"></div>
+	</div>
+	<div class="card">
+		<div class="front">balloon</div>
+		<div class="back"><img src="letter/balloon.jpg" alt="balloon"></div>
+	</div>
+	<div class="card">
+		<div class="front">cat</div>
+		<div class="back"><img src="letter/cat.jpg" alt="cat"></div>
+	</div>
+	<div class="card">
+		<div class="front">caterpillar</div>
+		<div class="back"><img src="letter/caterpillar.jpg" alt="caterpillar"></div>
+	</div>
+	<script>
+		let cards = document.querySelectorAll('.card');
+		cards.forEach(card=>{card.addEventListener('click',flip)});
+		function flip() {
+			this.classList.toggle('open');
+		}
+	</script>
+</body>
+</html>

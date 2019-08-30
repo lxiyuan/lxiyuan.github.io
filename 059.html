@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鸡兔同笼</title>
+</head>
+<body>
+<script>
+	let rabbit = 0;
+	let chicken = 0;
+	const jitu = function (heads,legs) {
+		if (legs < heads * 4 && legs > heads * 2) {
+			rabbit = (legs - heads * 2) / 2;
+			chicken = (heads * 4 - legs) / 2;
+			document.write(`笼子里一共有${heads}个头${legs}条腿，那么兔子${rabbit}只，鸡${chicken}只。<br>`);
+		}
+		else{
+			document.write('这个题目有问题，头和腿的数字是错的。<br>');
+		}
+	};
+	jitu(4,10);
+	jitu(4,18);
+	jitu(3554,9490);
+</script>	
+</body>
+</html>

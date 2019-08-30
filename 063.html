@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大小</title>
+</head>
+<body>
+	<p class="big"></p>
+	<p class="small"></p>
+	<script>
+		let cat = document.querySelector('.big');
+		let dog = document.querySelector('.small');
+		let number = [68,70,23,50,84,60,19,88,46,35];
+		let big = number.filter(n => n > 50);
+		let small = number.filter(n => n < 50);
+		cat.textContent = big;
+		dog.textContent = small;
+		// document.querySelector('.small').textContent = [68,70,23,50,84,60,19,88,46,35].filter(n => n < 50);
+	</script>
+</body>
+</html>

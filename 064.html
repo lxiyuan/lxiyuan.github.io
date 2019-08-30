@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anna's homepage</title>
+    <style>
+    body,
+    h1,
+    h3,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    .clearfix:after {
+        content: ' ';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    body {
+        text-align: center;
+        background: #f4f4f4;
+        font-family: 'microsoft yahei';
+    }
+
+    header {
+        background: #000;
+        /*height: 56px;*/
+    }
+
+    header .logo,
+    header nav,
+    header li {
+        float: left;
+    }
+
+    .logo {
+        line-height: 56px;
+        padding: 0 50px;
+    }
+
+    .logo a:hover {
+        color: #fab;
+    }
+
+    header li {
+        padding-right: 30px;
+        line-height: 56px;
+    }
+
+    header a {
+        color: #fff;
+        text-decoration: none;
+    }
+	.bluetitle{
+		color: #62CDE3;
+	}
+    .works {
+        width: 1600px;
+        margin: auto;
+    }
+
+    .works .item {
+        float: left;
+        width: 25%;
+    }
+
+    .item>a {
+        display: block;
+        border: 10px solid #fff;
+        margin-left: 10px;
+        color: #000;
+        text-decoration: none;
+    }
+
+    .item>a:hover {
+        border-color: rgb(238, 144, 178);
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .3)
+    }
+
+    .item img {
+        width: 100%;
+        display: block;
+    }
+
+    .item h3 {
+        background: #fff;
+        padding: 10px 0;
+        font-weight: normal;
+    }
+
+    .item>a:hover h3 {
+        background: rgb(238, 144, 178);
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="clearfix">
+        <h1 class="logo"><a href="064.html">ANNA</a></h1>
+        <nav>
+            <ul>
+                <li><a href="">WORKS</a></li>
+                <li><a href="">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>MY WORKS</h2>
+        <ul class="works clearfix">
+            <li class="item">
+                <a href="images/zp1.jpg">
+					<img src="images/zp1.jpg" alt="小亭子">
+					<h3>小亭子</h3>
+				</a>
+            </li>
+            <li class="item">
+                <a href="images/zp2.jpg">
+					<img src="images/zp2.jpg" alt="桌子上的鱼缸">
+					<h3>桌子上的鱼缸</h3>
+				</a>
+            </li>
+            <li class="item">
+                <a href="images/zp3.jpg">
+					<img src="images/zp3.jpg" alt="彩虹灯塔">
+					<h3>彩虹灯塔</h3>
+				</a>
+            </li>
+            <li class="item">
+                <a href="images/zp4.jpg">
+					<img src="images/zp4.jpg" alt="白桦林">
+					<h3>白桦林</h3>
+				</a>
+            </li>
+        </ul>
+        <h2>MY FRIENDS</h2>
+        <h2>MY SCHOOL</h2>
+    </main>
+    <script>
+    	let heading = document.querySelectorAll('h2');
+    	let myString = "the primary school attached to xi'an foreign language school";
+    	let changeStyle = function() {
+    		this.classList.toggle('bluetitle');
+    	};
+    	heading = Array.from(heading);
+    	// 箭头函数
+    	heading.forEach(item => item.addEventListener('click',changeStyle));
+    	// 普通函数
+    	// heading.forEach(function (item) {
+    	// 	item.addEventListener('click',changeStyle);
+    	// });
+    	heading[2].textContent = myString.toUpperCase();
+    </script>
+</body>
+</html>
