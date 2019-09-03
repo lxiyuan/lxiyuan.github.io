@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="author" content="liuxiyuan">
 	<title>poems</title>
 	<script src="/data/poems.js"></script>
 	<style>
@@ -27,7 +28,7 @@
 	</style>
 </head>
 <body>
-	<input type="search" id="keyword" placeholder="题目/朝代/作者/诗句" value="">
+	<input type="search" id="keyword" placeholder="题目/朝代/作者/诗句" value="" required autocomplete="off">
 	<ul id="list"></ul>
 	<script>
 		const keyword = document.querySelector('#keyword');
