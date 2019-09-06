@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画猫</title>
+	<style>
+		body{
+			
+		}
+	</style>
+</head>
+<body>
+	<script>
+		let myString = '=^.^=';
+		const drawCats = function (howManyTimes) {
+			for (let i = 0; i < howManyTimes; i++) {
+				document.write(`<p style="color:hsl(${i*2},80%,50%)">${i+1} ${myString}</p>`);
+			}
+		};
+		drawCats(100);
+	</script>
+</body>
+</html>
