@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word cards</title>
+    <style>
+    ul,li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    body {
+        text-align: center;
+        background: #f4f4f4;
+        font-family: 'microsoft yahei';
+    }
+
+    .mycards {
+        margin: auto;
+        width: 1600px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .front {
+        border-radius: 10px;
+        height: 400px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, .4);
+        display: none;
+    }
+
+    .front img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .back {
+        border-radius: 10px;
+        height: 400px;
+        overflow: hidden;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, .4);
+        font-size: 48px;
+        line-height: 400px;
+    }
+
+    .open .front {
+        display: block;
+    }
+
+    .open .back {
+        display: none;
+    }
+
+    .card:nth-of-type(5n-4) .back {
+        background: linear-gradient(30deg, rgb(237, 48, 60), rgba(237, 48, 60, .6));
+        color: rgb(248, 172, 177);
+    }
+
+    .card:nth-of-type(5n-3) .back {
+        background: linear-gradient(30deg, rgb(253, 185, 19), rgba(253, 185, 19, .6));
+        color: rgb(238, 48, 60);
+    }
+
+    .card:nth-of-type(5n-2) .back {
+        background: linear-gradient(30deg, rgb(37, 50, 137), rgba(37, 50, 137, .6));
+        color: rgb(168, 173, 208);
+    }
+
+    .card:nth-of-type(5n-1) .back {
+        background: linear-gradient(30deg, rgb(232, 107, 165), rgba(232, 107, 165, .6));
+        color: rgb(43, 107, 55);
+    }
+
+    .card:nth-of-type(5n) .back {
+        background: linear-gradient(30deg, rgb(97, 41, 138), rgba(97, 41, 138, .6));
+        color: rgb(169, 107, 197);
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="mycards"></ul>
+    <script>
+    const words = ['ant', 'balloon', 'caterpillar', 'dog', 'drum', 'duck', 'cat', 'eagle', 'elephant', 'gorilla'];
+    const mycards = document.querySelector('.mycards');
+    const cards = words.map(item => {
+        return `<li class="card"><div class="front"><img src="word/${item}.jpg" alt="${item}"></div><div class="back">${item}</div></li>`
+    }).join('');
+    mycards.innerHTML = cards;
+    const cardlist = mycards.querySelectorAll('.card');
+    // [].forEach.call(cardlist,card => card.addEventListener('click',flip));
+    Array.from(cardlist).forEach(card => card.addEventListener('click', flip));
+
+    function flip(event) {
+        this.classList.toggle('open');
+    }
+    </script>
+</body>
+
+</html>
