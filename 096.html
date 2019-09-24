@@ -29,8 +29,11 @@
 			padding:30px;
 			display:none;
 		}
-		video{
-			width: 100%;
+		.open .front{
+			display: none;
+		}
+		.open .back{
+			display: block;
 		}
 	</style>
 </head>
@@ -46,12 +49,19 @@
 		</div>
 		<div class="back">
 			<h1>
-				<p>你则么到学校？</p>
+				<p>你怎么到学校？</p>
 				<p>我走到学校。</p>
-				<p>你则么到学校？</p>
+				<p>你怎么到学校？</p>
 				<p>我坐地铁。</p>
 			</h1>
 		</div>
 	</div>
+	<script>
+		const card = document.querySelector('.card');
+		card.addEventListener('click',flip);
+		function flip() {
+			this.classList.toggle('open');
+		}
+	</script>
 </body>
 </html>
