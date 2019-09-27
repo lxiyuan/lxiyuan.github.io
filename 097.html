@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Coming to school</title>
+	<style>
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+		body{
+			text-align: center;
+			background: radial-gradient(circle,#519cc780 ,#a456de ,#22ffb1 );
+		}
+		.card{
+			width: 600px;
+			margin: 150px auto 0;
+		}
+		.front{
+			background:rgba(274,143,220,.5);
+			border-radius: 10px;
+			box-shadow: 10px 10px 10px rgba(0,0,0,.3);
+			padding: 30px 0;
+		}
+		.back{
+			background: rgba(244,253,0,.5);
+			border-radius:10px;
+			box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			padding:30px;
+			display:none;
+		}
+		.open .front{
+			display: none;
+		}
+		.open .back{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="front">
+			<h1>
+				<p>How do you come to school?</p>
+				<p>I come to school on foot.</p>
+				<p>How do you come to school?</p>
+				<p>By metro.</p>
+			</h1>
+		</div>
+		<div class="back">
+			<h1>
+				<p>你怎么到学校？</p>
+				<p>我走到学校。</p>
+				<p>你怎么到学校？</p>
+				<p>我坐地铁。</p>
+			</h1>
+		</div>
+	</div>
+	<script>
+		const card = document.querySelector('.card');
+		card.addEventListener('click',flip);
+		function flip() {
+			this.classList.toggle('open');
+		}
+	</script>
+</body>
+</html>
