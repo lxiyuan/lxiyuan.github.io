@@ -1,11 +1,14 @@
 body,h1,h2,h3,ul,ol,li{
 	margin: 0;
 	padding: 0;
+}
+ul,ol,li{
 	list-style: none;
 }
 body{
 	background: #f1f1f1;
 	text-align: center;
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
 	font-size: 14px;
 }
 a{
@@ -14,6 +17,7 @@ a{
 }
 header{
 	border-bottom: 1px solid #ccc;
+	background: #fff;
 	display: flex;
 }
 nav>ul{
@@ -23,21 +27,23 @@ nav>ul>li{
 	font-size: 20px;
 	padding: 0 10px;
 }
-header>h1{
-	margin:0 10px;
-}
 header li{
 	padding-right: 30px;
-	line-height: 56px;
+	line-height: 50px;
 }
 .logo{
-	line-height: 56px;
+	line-height: 50px;
 	padding: 0 30px;
 }
 .logo a:hover{
 	color: #fab;
 }
 footer{
+	padding: 10px 0;
+	font-size: 12px;
+}
+footer,footer a{
+	color: #999;
 }
 main>h2{
 	margin-top: 25px;
@@ -61,17 +67,40 @@ main>h2{
 	color: #fff;
 }
 .item h3{
+	color: #ED4C67;
 }
 .item img{
 	width: 100%;
+}
+.coding{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.coding li{
+	width: 200px;
+	padding: 10px;
+	margin: 10px;
+	background: #fff;
+	border-radius: 4px;
+}
+.coding a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	text-decoration: none;
+}
+.coding a:hover{
+	color: #fd00ca;
+}
+.avatar{
+	margin-top: 20px;
 }
 .avatar img{
 	border-radius: 50%;
 	width: 180px;
 	border: 8px solid #f4d;
-}
-.about p{
-	font-size: 18px;
 }
 .about{
 	background: rgba(105,236,255,.3);
@@ -82,33 +111,22 @@ main>h2{
 	text-align: left;
 	padding: 10px 0 10px 40px;
 }
+.about p{
+	font-size: 18px;
+}
 .info{
 	font-size: 18px;
 }
-/*ul{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+@media screen and (max-device-width: 767px){
+	.works{
+		flex-wrap: wrap;
+	}
+	.item>a,.item img{
+		border-radius: 4px;
+	}
+	.about{
+		width: 360px;
+		border-radius: 6px;
+		padding-left: 20px;
+	}
 }
-li{
-	height: 200px;
-	width: 200px;
-	padding: 12px;
-	margin: 12px;
-	background: rgba(32,87,246,.3);
-	border-radius: 10px;
-}
-a{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	text-decoration: none;
-	color: #00c;
-}
-a:hover{
-	color: #fd00ca;
-}*/
