@@ -3,14 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="liuxiyuan">
+	<meta name="viewport" content="width=device-width">
 	<title>poems</title>
-	<script src="/data/poems.js"></script>
+	<script src="data/poems.js"></script>
 	<style>
-		li{
+		body,ul,li,h2,p,input{
+			margin: 0;
+			padding: 0;
+		}
+		.searchbar{
+			text-align: center;
+			background: #fff;
+			box-shadow: 0 2px 2px rgba(0,0,0,.3);
+		}
+		#keyword{
+			width: 360px;
+			margin: 10px 0;
+			height: 48px;
+			line-height: 48px;
+			font-size: 24px;
+			border-radius: 4px;
+		}
+		ul#list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content:center;
+		}
+		ul#list > li{
 			width:40%;
-			height: 200px;
 			border:1px solid;
 			margin: 20px;
+			padding: 20px 0;
 			list-style: none;
 			color: rgba(120,123,255,.4);
 			border-radius: 10px;
@@ -18,17 +42,19 @@
 			color: #fff;
 			background: rgba(187,52,241,.8);
 			text-align: center;
+			line-height: 2;
 		}
-		ul{
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-content:center;
-		} 		
+		@media screen and (max-width: 736px){
+			ul#list > li{
+				width: 100%;
+			}
+		}
 	</style>
 </head>
 <body>
-	<input type="search" id="keyword" placeholder="题目/朝代/作者/诗句" value="" required autocomplete="off">
+	<div class="searchbar">
+		<input type="search" id="keyword" placeholder="题目/朝代/作者/诗句" value="" required autocomplete="off">
+	</div>
 	<ul id="list"></ul>
 	<script>
 		const keyword = document.querySelector('#keyword');
@@ -40,7 +66,7 @@
 		}
 		function showlist() {
 			const selectedpoems = poems.filter(searchpoem);
-			const html = selectedpoems.map((item,index)=>`<li><h2>${item.title}</h2><p>【${item.dynasty}】 ${item.author}</p><div>${item.content}</div></li>`).join('');
+			const html = selectedpoems.map((item,index)=>`<li><h2>${item.title}</h2><p>【${item.dynasty}】 ${item.author}</p><div>${item.content.replace(/。(?!$)/g,'。<br>')}</div></li>`).join('');
 			list.innerHTML = html;
 		}
 		showlist();
