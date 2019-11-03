@@ -117,9 +117,15 @@ main>h2{
 .info{
 	font-size: 18px;
 }
+.ant{
+	flex-wrap: wrap;
+}
+.ant .item>a{
+}
 @media screen and (max-device-width: 767px){
 	.works{
 		flex-wrap: wrap;
+
 	}
 	.item>a,.item img{
 		border-radius: 4px;
@@ -129,4 +135,5 @@ main>h2{
 		border-radius: 6px;
 		padding-left: 20px;
 	}
+
 }
