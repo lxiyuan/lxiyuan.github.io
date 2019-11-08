@@ -133,6 +133,10 @@ main>h2{
 	.item>a,.item img{
 		border-radius: 4px;
 	}
+	.wlist .item img{
+	height: auto;
+	object-fit: fill;
+	}
 	.about{
 		width: 360px;
 		border-radius: 6px;
