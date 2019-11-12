@@ -128,7 +128,6 @@ main>h2{
 @media screen and (max-device-width: 767px){
 	.works{
 		flex-wrap: wrap;
-
 	}
 	.item>a,.item img{
 		border-radius: 4px;
